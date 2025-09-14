@@ -1,6 +1,6 @@
 function searchMovies() {
     const searchQuery = document.getElementById('movieSearch').value.trim();  // Captura o texto inserido na pesquisa
-    const apiKey = '8ff48223';  // Sua chave da API OMDb
+    const apiKey = '8ff48223';  //chave da API OMDb
 
     // Verifica se o campo de pesquisa não está vazio
     if (searchQuery === '') {
@@ -17,15 +17,15 @@ function searchMovies() {
     fetch(url)
         .then(response => {
             if (!response.ok) {
-                throw new Error('Erro na requisição. Status: ' + response.status);  // Lida com erros de status HTTP
+                throw new Error('Erro na requisição. Status: ' + response.status);  
             }
             return response.json();  // Converte a resposta para JSON
         })
         .then(data => {
-            console.log('Resposta da API:', data);  // Depuração
+            console.log('Resposta da API:', data);  
 
             if (data.Response === 'True') {
-                displayResults(data.Search);  // Exibe os resultados se a resposta for positiva
+                displayResults(data.Search);  // Mostra os resultados se a resposta for positiva
             } else {
                 document.getElementById('results').innerHTML = 'Nenhum filme encontrado.';
             }
@@ -40,7 +40,7 @@ function displayResults(movies) {
     const resultsContainer = document.getElementById('results');
     resultsContainer.innerHTML = '';  // Limpa os resultados anteriores1
 
-    // Exibe cada filme encontrado
+    // mostra filme encontrado
     movies.forEach(movie => {
         const movieElement = document.createElement('div');
         movieElement.classList.add('movie');
@@ -53,5 +53,6 @@ function displayResults(movies) {
         resultsContainer.appendChild(movieElement);
     });
 }
+
 
 
