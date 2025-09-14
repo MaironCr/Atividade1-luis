@@ -1,68 +1,117 @@
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
+/* ======= RESET ======= */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
+/* ======= BODY ======= */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(to right, #141e30, #243b55);
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* ======= CONTAINER ======= */
 .container {
-    width: 80%;
-    margin: 0 auto;
-    padding-top: 50px;
+    width: 90%;
+    max-width: 1200px;
+    margin-top: 40px;
     text-align: center;
 }
 
+/* ======= TÍTULO ======= */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #f9ca24;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+}
+
+/* ======= BARRA DE PESQUISA ======= */
 input {
-    padding: 10px;
+    padding: 12px;
     width: 300px;
-    margin-right: 10px;
+    max-width: 80%;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    font-size: 16px;
 }
 
 button {
-    padding: 10px 20px;
-    background-color: #4CAF50;
+    padding: 12px 20px;
+    background-color: #f0932b;
     color: white;
     border: none;
+    border-radius: 8px;
+    font-size: 16px;
     cursor: pointer;
+    transition: 0.3s ease;
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #eb4d4b;
+    transform: scale(1.05);
 }
 
+/* ======= RESULTADOS ======= */
 #results {
-    margin-top: 30px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
 }
 
+/* ======= CARD DO FILME ======= */
 .movie {
-    width: 200px;
-    margin: 10px;
-    text-align: center;
+    background: #1e2a38;
+    border-radius: 12px;
+    padding: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.movie:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.6);
 }
 
 .movie img {
     width: 100%;
-    height: auto;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 12px;
 }
 
 .movie h3 {
-    margin: 10px 0;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+    color: #f9ca24;
 }
 
 .movie p {
     font-size: 14px;
+    margin-bottom: 10px;
+    color: #dcdde1;
 }
 
 .movie a {
-    color: #007BFF;
+    display: inline-block;
+    padding: 8px 12px;
+    background: #00a8ff;
+    color: white;
+    border-radius: 6px;
+    font-size: 14px;
     text-decoration: none;
+    transition: background 0.3s ease;
 }
 
 .movie a:hover {
-    text-decoration: underline;
+    background: #0097e6;
 }
-
